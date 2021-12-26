@@ -34,7 +34,7 @@
         <input type="radio" name="calcu" value="subtraction">引き算<br>
         <input type="radio" name="calcu" value="division">わりざん<br>
         </p>
-
+        <a>aiueo</a>
         <div id="edit_area3"></div>
 
         <button type="button" onclick="rad">記号</button>
@@ -51,14 +51,16 @@
         <script type="text/javascript">
             async function rad(){
 
-                let checkValue = '';
+                var elements = document.getElementsByName( "calcu" ) ;
 
-                for (let i = 0; i < len; i++){
-                    if (calcuRadio.item(i).checked){
-                    checkValue = calcuRadio.item(i).value;
+                // 選択状態の値を取得
+                for ( var a="", i=elements.length; i--; ) {
+                    if ( elements[i].checked ) {
+                        var a = elements[i].value ;
+                        break ;
                     }
                 }
-                document.getElementById('edit_area3').innerHTML = Chckvalue ;
+                document.getElementById('edit_area3').innerHTML = a ;
             }
 
             // More API functions here:
