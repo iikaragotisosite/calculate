@@ -92,7 +92,7 @@
                 // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
 
-            /*if(prediction[0].probability.toFixed(2)>0.80){
+            if(prediction[0].probability.toFixed(2)>0.80){
                 var str = 1;
                 document.getElementById('edit_area').innerHTML = str ;
                 const tracks = document.getElementById('video').srcObject.getTracks();
@@ -174,13 +174,13 @@
 
                 document.getElementById('video').srcObject = null;
 
-            }*/
+            }
 
-                for (let i = 0; i < maxPredictions; i++) {
+             /*   for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
                         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
                     labelContainer.childNodes[i].innerHTML = classPrediction;
-                }
+                }*/
             }
         </script>
         
