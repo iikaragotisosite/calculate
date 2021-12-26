@@ -49,18 +49,17 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
         <script type="text/javascript">
-            async function rad(){
+            function rad() {
+                let str = "";
+                const color1 = document.form1.color1;
 
-                var elements = document.getElementsByName( "calcu" ) ;
-
-                // 選択状態の値を取得
-                for ( var a="", i=elements.length; i--; ) {
-                    if ( elements[i].checked ) {
-                        var a = elements[i].value ;
-                        break ;
-                    }
+                for (let i = 0; i < color1.length; i++) {
+                if (color1[i].checked) {//(color1[i].checked === true)と同じ
+                    str = color1[i].value;
+                    break;
                 }
-                document.getElementById('edit_area3').innerHTML = a ;
+                }
+                document.getElementById("edit_area3").textContent = str;
             }
 
             // More API functions here:
