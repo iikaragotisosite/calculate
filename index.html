@@ -71,7 +71,7 @@
                 webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
                 await webcam.setup(); // request access to the webcam
                 await webcam.play();
-                window.requestAnimationFrame(loop);
+                window.requestAnimationFrame(loop1);
         
                 // append elements to the DOM
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -81,99 +81,100 @@
                 }
             }
         
-            async function loop() {
+            async function loop1() {
                 webcam.update(); // update the webcam frame
-                await predict();
+                await predict1();
                 window.requestAnimationFrame(loop);
             }
         
             // run the webcam image through the image model
-            async function predict() {
+            async function predict1() {
                 // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
 
-            if(prediction[0].probability.toFixed(2)>0.80){
-                var str = 1;
-                document.getElementById('edit_area1').innerHTML = str ;
-                const tracks = document.getElementById('video').srcObject.getTracks();
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                if(prediction[0].probability.toFixed(2)>0.80){
+                    var str = 1;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    const tracks = document.getElementById('video').srcObject.getTracks();
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[1].probability.toFixed(2)>0.80){
-                var str = 2;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[1].probability.toFixed(2)>0.80){
+                    var str = 2;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[2].probability.toFixed(2)>0.80){
-                var str = 3;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[2].probability.toFixed(2)>0.80){
+                    var str = 3;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[3].probability.toFixed(2)>0.80){
-                var str = 4;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[3].probability.toFixed(2)>0.80){
+                    var str = 4;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
-                
-            }else if(prediction[4].probability.toFixed(2)>0.80){
-                var str = 5;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                    document.getElementById('video').srcObject = null;
+                    
+                }else if(prediction[4].probability.toFixed(2)>0.80){
+                    var str = 5;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[5].probability.toFixed(2)>0.80){
-                var str = 6;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[5].probability.toFixed(2)>0.80){
+                    var str = 6;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[6].probability.toFixed(2)>0.80){
-                var str = 7;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[6].probability.toFixed(2)>0.80){
+                    var str = 7;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[7].probability.toFixed(2)>0.80){
-                var str = 8;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[7].probability.toFixed(2)>0.80){
+                    var str = 8;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[8].probability.toFixed(2)>0.80){
-                var str = 9;
-                document.getElementById('edit_area1').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[8].probability.toFixed(2)>0.80){
+                    var str = 9;
+                    document.getElementById('edit_area1').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
+                }
             }
 
             async function init2() {
@@ -192,7 +193,7 @@
                 webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
                 await webcam.setup(); // request access to the webcam
                 await webcam.play();
-                window.requestAnimationFrame(loop);
+                window.requestAnimationFrame(loop2);
         
                 // append elements to the DOM
                 document.getElementById("webcam-container").appendChild(webcam.canvas);
@@ -202,100 +203,100 @@
                 }
             }
         
-            async function loop() {
+            async function loop2() {
                 webcam.update(); // update the webcam frame
-                await predict();
+                await predict2();
                 window.requestAnimationFrame(loop);
             }
         
             // run the webcam image through the image model
-            async function predict() {
+            async function predict2() {
                 // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
 
-            if(prediction[0].probability.toFixed(2)>0.80){
-                var str = 1;
-                document.getElementById('edit_area2').innerHTML = str ;
-                const tracks = document.getElementById('video').srcObject.getTracks();
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                if(prediction[0].probability.toFixed(2)>0.80){
+                    var str = 1;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    const tracks = document.getElementById('video').srcObject.getTracks();
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[1].probability.toFixed(2)>0.80){
-                var str = 2;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[1].probability.toFixed(2)>0.80){
+                    var str = 2;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[2].probability.toFixed(2)>0.80){
-                var str = 3;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[2].probability.toFixed(2)>0.80){
+                    var str = 3;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[3].probability.toFixed(2)>0.80){
-                var str = 4;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[3].probability.toFixed(2)>0.80){
+                    var str = 4;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
-                
-            }else if(prediction[4].probability.toFixed(2)>0.80){
-                var str = 5;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                    document.getElementById('video').srcObject = null;
+                    
+                }else if(prediction[4].probability.toFixed(2)>0.80){
+                    var str = 5;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[5].probability.toFixed(2)>0.80){
-                var str = 6;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[5].probability.toFixed(2)>0.80){
+                    var str = 6;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[6].probability.toFixed(2)>0.80){
-                var str = 7;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[6].probability.toFixed(2)>0.80){
+                    var str = 7;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[7].probability.toFixed(2)>0.80){
-                var str = 8;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[7].probability.toFixed(2)>0.80){
+                    var str = 8;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }else if(prediction[8].probability.toFixed(2)>0.80){
-                var str = 9;
-                document.getElementById('edit_area2').innerHTML = str ;
-                tracks.forEach(track => {
-                    track.stop();
-                });
+                }else if(prediction[8].probability.toFixed(2)>0.80){
+                    var str = 9;
+                    document.getElementById('edit_area2').innerHTML = str ;
+                    tracks.forEach(track => {
+                        track.stop();
+                    });
 
-                document.getElementById('video').srcObject = null;
+                    document.getElementById('video').srcObject = null;
 
-            }
+                }
 
              /*   for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
