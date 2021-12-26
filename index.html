@@ -34,7 +34,6 @@
         <input type="radio" name="calcu" value="subtraction">引き算<br>
         <input type="radio" name="calcu" value="division">わりざん<br>
         </form>
-        <a>kaiueo</a>
         <div id="edit_area3"></div>
 
         <button type="button" onclick="rad()">記号</button>
@@ -329,10 +328,41 @@
 
         
 
-    <a href="./confirm.html">
-        <button type="button">計算</button>
-    </a>
-    
+    <!--<a href="./confirm.html">-->
+        <button type="button" onclick="rad2()">計算</button>
+        <div id="edit_area4"></div>
+    <!--</a>-->
 
+    <script>
+        function rad2() {
+            let str = "";
+            const calcu = document.form1.calcu;
+
+            for (let i = 0; i < calcu.length; i++) {
+                if (calcu[i].checked) {
+                    str = calcu[i].value;
+                    break;
+                }
+            }
+            if(str == "division"){
+
+                document.getElementById("edit_area4").textContent = str;
+
+            }else if(str == "addition"){
+
+                document.getElementById("edit_area4").textContent = str;
+
+            }else if(str == "subtraction"){
+
+                document.getElementById("edit_area4").textContent = str;
+
+            }else if(str == "multiple"){
+
+                document.getElementById("edit_area4").textContent = str;
+                
+            }
+        }
+    </script>
+    
 </body>
 </html>
