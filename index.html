@@ -346,20 +346,28 @@
             }
             if(str == "division"){
 
-                document.getElementById("edit_area4").textContent = str;
+                var a = document.getElementById("edit_area1").innerHTML;
+                var b = document.getElementById("edit_area2").innerHTML;
+                document.getElementById("edit_area4").innerHTML = a/b;
 
             }else if(str == "addition"){
 
-                document.getElementById("edit_area4").textContent = str;
+                var a = document.getElementById("edit_area1").innerHTML;
+                var b = document.getElementById("edit_area2").innerHTML;
+                document.getElementById("edit_area4").innerHTML = a+b;
 
             }else if(str == "subtraction"){
 
-                document.getElementById("edit_area4").textContent = str;
+                var a = document.getElementById("edit_area1").innerHTML;
+                var b = document.getElementById("edit_area2").innerHTML;
+                document.getElementById("edit_area4").innerHTML = a-b;
 
             }else if(str == "multiple"){
 
-                document.getElementById("edit_area4").textContent = str;
-                
+                var a = document.getElementById("edit_area1").innerHTML;
+                var b = document.getElementById("edit_area2").innerHTML;
+                document.getElementById("edit_area4").innerHTML = a*b;
+
             }
         }
     </script>
