@@ -24,8 +24,18 @@
     <h1 class = "center" >四則演算</h1>
 
     <body>
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
+        <!--<div>Teachable Machine Image Model</div>-->
+        <!--<button type="button" onclick="init()">Start</button>-->
+
+        <button　type="button"　onclick="init()">数字入力</button>
+
+        <button type="radio" name="multiple" value="multiple">かけ算</button>
+        <button type="radio" name="addition" value="addition">足し算</button>
+        <button type="radio" name="subtraction" value="subtraction">引き算</button>
+        <button type="radio" name="division" value="division">わりざん</button>
+
+        <button　type="button"　onclick="init()">数字入力</button>
+
         <div id="webcam-container"></div>
         <div id="label-container"></div>
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -76,6 +86,9 @@
             async function predict() {
                 // predict can take in an image, video or canvas html element
                 const prediction = await model.predict(webcam.canvas);
+
+                //if()
+
                 for (let i = 0; i < maxPredictions; i++) {
                     const classPrediction =
                         prediction[i].className + ": " + prediction[i].probability.toFixed(2);
@@ -83,12 +96,6 @@
                 }
             }
         </script>
-
-    <button>数字入力</button>
-
-    <button>記号入力</button>
-    
-    <button>数字入力</button>
 
     <a href="./confirm.html">
         <button type="button">計算</button>
