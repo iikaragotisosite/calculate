@@ -28,12 +28,12 @@
 
         
         
-        <p>
+        <form name="form1">
         <input type="radio" name="calcu" value="multiple">かけ算<br>
         <input type="radio" name="calcu" value="addition">足し算<br>
         <input type="radio" name="calcu" value="subtraction">引き算<br>
         <input type="radio" name="calcu" value="division">わりざん<br>
-        </p>
+        </form>
         <a>aiueo</a>
         <div id="edit_area3"></div>
 
@@ -51,11 +51,11 @@
         <script type="text/javascript">
             function rad() {
                 let str = "";
-                const color1 = document.form1.color1;
+                const calcu = document.form1.calcu;
 
-                for (let i = 0; i < color1.length; i++) {
-                if (color1[i].checked) {//(color1[i].checked === true)と同じ
-                    str = color1[i].value;
+                for (let i = 0; i < calcu.length; i++) {
+                if (calcu[i].checked) {
+                    str = calcu[i].value;
                     break;
                 }
                 }
